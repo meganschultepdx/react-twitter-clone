@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
         flexDirection: 'column',
         padding: '10px',
         maxHeight: '200px',
-        marginTop: '10px'
+        marginTop: '10px',    
     }
 }));
 

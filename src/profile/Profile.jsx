@@ -13,9 +13,14 @@ const useStyles = makeStyles(theme => ({
         height: '200px',
         background: 'linear-gradient(to bottom, #03A9F4 50%, white 50%)',
         '& a': {
+            textDecoration: 'none',
             fontWeight: 'bold',
-            fontSize: '12px'
-
+            fontSize: '12px',
+            color: 'grey',
+            '&:hover': {
+                textDecoration: 'none',
+                color: 'blue'
+            }
         }
     },
     profileheading: {
@@ -30,9 +35,13 @@ const useStyles = makeStyles(theme => ({
         marginTop: '20px'
     },
     profilepic: {
-        border: '1px solid black',
+        border: '2.5px solid white',
+        borderRadius: '10px',
         marginTop: '-19px',
-        backgroundColor: 'white'
+        backgroundColor: '#03A9F4',
+        width: '60px',
+        height: '60px',
+        color: 'white',
     }
 }));
 
@@ -41,7 +50,7 @@ export default function Profile() {
     return (
         <div className={classes.profilebox}>
             <div className={classes.profileheading}>
-                <FaceIcon className ={classes.profilepic} fontSize='large' />
+                <FaceIcon className={classes.profilepic} fontSize='large' />
                 <h3>Name N. Name</h3>
             </div>
             <div className={classes.profilelinks}>

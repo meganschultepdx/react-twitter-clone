@@ -6,6 +6,7 @@ import Tweetflow from './tweetflow/Tweetflow';
 import Profile from './profile/Profile';
 import { makeStyles } from '@material-ui/core/styles';
 import Profilesummary from './profilesummary/Profilesummary';
+import Friends from './friends/Friends';
 
 
 const useStyles = makeStyles(theme => ({
@@ -33,6 +34,7 @@ function App() {
       <Profilesummary/>
       </div>
       <Tweetflow/>
+      <Friends/>
       </div>
     </div>
   );
