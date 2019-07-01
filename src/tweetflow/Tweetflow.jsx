@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height: 'min-content',    
+    height: 'min-content',
     padding: '10px',
     margin: '0 10px'
   },
@@ -20,23 +20,34 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+
+let tweets = [
+  {
+    heading: 'Tilly Tompson',
+    text: 'Lol look at this'
+  },
+  {
+    heading: 'Bill Dotrieve',
+    text: "Huh What's this button"
+  },
+  {
+    heading: 'Kate Krig',
+    text: 'Click Here'
+  }
+];
+
 function Tweetflow() {
   const classes = useStyles();
   return (
     <div className={classes.tweetflow}>
 
       <TextField className={classes.textinput} type="text" placeholder="What's Happening?" />
-      <Tweet 
-      heading="Heading"
-      text="lorem ipsum"/>
-      <Tweet 
-      heading="Heading2"
-      text="lorem ipsum"/>
-      
-      <Tweet 
-      heading="Heading3"
-      text="lorem ipsum"/>
-      
+      {tweets.map((tweet, index) =>
+        <Tweet
+          heading={tweet.heading}
+          text={tweet.text}
+          key={index} />
+      )}
     </div>
   );
 }
