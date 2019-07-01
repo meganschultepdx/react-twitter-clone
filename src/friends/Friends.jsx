@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         padding: '10px',
+        height: 'min-content',
     }
 }));
 

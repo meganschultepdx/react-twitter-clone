@@ -5,13 +5,14 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   tweetflow: {
-    width: '33%',
+    width: '300px',
     border: '1px solid black',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    height: 'min-content',    
     padding: '10px',
+    margin: '0 10px'
   },
   textinput: {
     width: "100%"

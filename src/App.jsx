@@ -12,12 +12,31 @@ import Friends from './friends/Friends';
 const useStyles = makeStyles(theme => ({
   container: {
     // width: '33%',
-    border: '1px solid black',
+    // border: '1px solid black',
+    minHeight: 'calc(100vh - 84px)',
     display: 'flex',
-    // flexDirection: 'column',
+    flexDirection: 'row',
     // alignItems: 'center',
+    maxWidth: '996px',
+    margin: '0 auto',
     justifyContent: 'space-between',
     padding: '10px',
+
+
+    ['@media (max-width:780px)']: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      '& div': {
+        // padding: '10px',
+        // margin: '10px'
+      }
+    }
+
+
+  },
+  profileContainer: {
+    margin: '0px!important',
+    padding: '0px!important'
   },
 }));
 
@@ -27,14 +46,14 @@ function App() {
     <div>
       <header className="App-header">
       </header>
-      <Navbar/>
+      <Navbar />
       <div className={classes.container}>
-      <div>
-      <Profile/>
-      <Profilesummary/>
-      </div>
-      <Tweetflow/>
-      <Friends/>
+        <div className={classes.profileContainer}>
+          <Profile />
+          <Profilesummary />
+        </div>
+        <Tweetflow />
+        <Friends />
       </div>
     </div>
   );

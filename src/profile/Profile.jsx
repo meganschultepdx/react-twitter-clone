@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         border: '1px solid black',
         display: 'flex',
         flexDirection: 'column',
-        padding: '0 10px',
+        padding: '0 10px 10px',
         height: '200px',
         background: 'linear-gradient(to bottom, #03A9F4 50%, white 50%)',
         '& a': {
@@ -27,12 +27,12 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         marginTop: '100px',
         '& h3': {
-            margin: '0 15px'
+            margin: '15px auto'
         }
     },
     profilelinks: {
         textAlign: 'center',
-        marginTop: '20px'
+        margin: 'auto 0px 10px'
     },
     profilepic: {
         border: '2.5px solid white',
