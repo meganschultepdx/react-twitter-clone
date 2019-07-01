@@ -5,6 +5,7 @@ import Navbar from './navbar/Navbar';
 import Tweetflow from './tweetflow/Tweetflow';
 import Profile from './profile/Profile';
 import { makeStyles } from '@material-ui/core/styles';
+import Profilesummary from './profilesummary/Profilesummary';
 
 
 const useStyles = makeStyles(theme => ({
@@ -13,8 +14,8 @@ const useStyles = makeStyles(theme => ({
     border: '1px solid black',
     display: 'flex',
     // flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    justifyContent: 'space-between',
     padding: '10px',
   },
 }));
@@ -27,7 +28,10 @@ function App() {
       </header>
       <Navbar/>
       <div className={classes.container}>
+      <div>
       <Profile/>
+      <Profilesummary/>
+      </div>
       <Tweetflow/>
       </div>
     </div>
