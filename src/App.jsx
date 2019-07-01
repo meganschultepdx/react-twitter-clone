@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './navbar/Navbar';
 import Tweetflow from './tweetflow/Tweetflow';
@@ -22,14 +21,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     padding: '10px',
 
-
+// eslint-disable-next-line
     ['@media (max-width:780px)']: {
       flexDirection: 'column',
       alignItems: 'center',
-      '& div': {
-        // padding: '10px',
-        // margin: '10px'
-      }
+      // '& div': {
+      //   // padding: '10px',
+      //   // margin: '10px'
+      // }
     }
 
 

@@ -54,7 +54,7 @@ export default function Profile() {
                 <h3>Name N. Name</h3>
             </div>
             <div className={classes.profilelinks}>
-                <a href="#">TWEETS</a> <a href="#">FOLLOWING</a> <a href="#">FOLLOWERS</a>
+                <a href="/">TWEETS</a> <a href="/">FOLLOWING</a> <a href="/">FOLLOWERS</a>
             </div>
         </div>
     );

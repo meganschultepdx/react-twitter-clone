@@ -1,5 +1,4 @@
 import React from 'react';
-import Leftnav from "./Leftnav";
 import SearchBar from './SearchBar';
 
 import AppBar from '@material-ui/core/AppBar';

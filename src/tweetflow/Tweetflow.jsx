@@ -1,6 +1,6 @@
 import React from "react";
 import Tweet from "./Tweet";
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
@@ -26,10 +26,17 @@ function Tweetflow() {
     <div className={classes.tweetflow}>
 
       <TextField className={classes.textinput} type="text" placeholder="What's Happening?" />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
+      <Tweet 
+      heading="Heading"
+      text="lorem ipsum"/>
+      <Tweet 
+      heading="Heading2"
+      text="lorem ipsum"/>
+      
+      <Tweet 
+      heading="Heading3"
+      text="lorem ipsum"/>
+      
     </div>
   );
 }

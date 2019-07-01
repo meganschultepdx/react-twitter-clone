@@ -2,6 +2,8 @@ import React from 'react';
 import FaceIcon from '@material-ui/icons/Face';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import PropTypes from "prop-types";
+
 
 const useStyles = makeStyles(theme => ({
   tweet: {
@@ -22,17 +24,22 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Tweet() {
+function Tweet(props) {
   const classes = useStyles();
   return (
     <Card className={classes.tweet}>
       <FaceIcon fontSize='large'/>
       <div>
-        <h4>Heading</h4>
-        <p>text text text</p>
+        <h4>{props.heading}</h4>
+        <p>{props.text}</p>
       </div>
     </Card>
   );
 }
+
+Tweet.propTypes = {
+  heading: PropTypes.string,
+  text: PropTypes.string
+};
 
 export default Tweet;
