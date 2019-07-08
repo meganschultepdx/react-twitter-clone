@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Navbar from './navbar/Navbar';
-import Tweetflow from './tweetflow/Tweetflow';
-import Profile from './profile/Profile';
+import Navbar from './Components/Navbar';
+import TweetList from './Components/TweetList';
+import Profile from './Components/Profile';
 import { makeStyles } from '@material-ui/core/styles';
-import Profilesummary from './profilesummary/Profilesummary';
-import Friends from './friends/Friends';
-import NewTweetControl from './tweetflow/NewTweetControl';
+import Profilesummary from './Components/Profilesummary';
+import Friends from './Components/Friends';
+import NewTweetControl from './Components/NewTweetControl';
 import { Switch, Route } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
@@ -40,9 +40,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function App() {
+class App extends React.Component() {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTweetList: []
+    };
+    this.handleAddingNewTweetToList = this.handleAddingNewTweetToList.bind(this);
+  }
+
+  handleAddingNewTweetToList(newTweet){
+    let newMasterTweetList = this.state.masterTweetList.slice();
+    newMasterTweetList.push(newTweet);
+    this.setState({masterTweetList: newMasterTweetList});
+  }
+
+  render () {
   const classes = useStyles();
-  return (
+    return (
     <div>
       <header className="App-header">
       </header>
@@ -53,14 +69,16 @@ function App() {
           <Profilesummary />
         </div>
         <Switch>
-        <Route exact path='/' component={Tweetflow} />
-        <Route path='/tweetflow' component={NewTweetControl} />
+        <Route exact path='/' component={TweetList} />
+        <Route path='/TweetList' component={NewTweetControl} />
+        <Route path='/newTweet' render={()=><NewTweetControl onNewTweetCreation={this.handleAddingNewTweetToList} />} />
         </Switch>
-        <Tweetflow />
+        <TweetList />
         <Friends />
       </div>
     </div>
   );
+  }
 }
 
 export default App;

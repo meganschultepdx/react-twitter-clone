@@ -2,6 +2,7 @@ import React from "react";
 import Tweet from "./Tweet";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import NewTweetForm from './NewTweetForm';
 
 const useStyles = makeStyles(theme => ({
   tweetflow: {
@@ -20,36 +21,21 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-
-let tweets = [
-  {
-    heading: 'Tilly Tompson',
-    text: 'Lol look at this'
-  },
-  {
-    heading: 'Bill Dotrieve',
-    text: "Huh What's this button"
-  },
-  {
-    heading: 'Kate Krig',
-    text: 'Click Here'
-  }
-];
-
-function Tweetflow() {
+function TweetList(props) {
   const classes = useStyles();
   return (
     <div className={classes.tweetflow}>
 
-      <TextField className={classes.textinput} type="text" placeholder="What's Happening?" />
-      {tweets.map((tweet, index) =>
+      {/*}<TextField className={classes.textinput} type="text" placeholder="What's Happening?" />*/}
+
+      {props.tweetList.map((tweet, index) =>
         <Tweet
-          heading={tweet.heading}
           text={tweet.text}
           key={index} />
       )}
+      <NewTweetForm/>
     </div>
   );
 }
 
-export default Tweetflow;
+export default TweetList;
