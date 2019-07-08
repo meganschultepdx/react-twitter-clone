@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import NewTweetForm from './NewTweetForm'
+import NewTweetForm from './NewTweetForm';
 
 class NewTweetControl extends React.Component {
 
@@ -17,15 +17,13 @@ class NewTweetControl extends React.Component {
   }
 
   render(){
-    let currentlyVisibleContent = null;
+    let display = <button onClick ={this.handleNewTweetButton}>Tweet</button>
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewTweetForm />;
-    } else {
-      currentlyVisibleContent = <AddTweetButton onNewTweetButton={this.handleNewTweetButton}/>;
+      display = <NewTweetForm onNewTweetCreation={this.props.onNewTweetCreation}/>;
     }
     return(
       <div>
-        {currentlyVisibleContent}
+        {display}
       </div>
     );
   }
