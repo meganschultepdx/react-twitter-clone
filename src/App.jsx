@@ -6,7 +6,8 @@ import Profile from './profile/Profile';
 import { makeStyles } from '@material-ui/core/styles';
 import Profilesummary from './profilesummary/Profilesummary';
 import Friends from './friends/Friends';
-
+import NewTweetControl from './tweetflow/NewTweetControl';
+import { Switch, Route } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -51,6 +52,10 @@ function App() {
           <Profile />
           <Profilesummary />
         </div>
+        <Switch>
+        <Route exact path='/' component={Tweetflow} />
+        <Route path='/tweetflow' component={NewTweetControl} />
+        </Switch>
         <Tweetflow />
         <Friends />
       </div>
