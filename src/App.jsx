@@ -14,15 +14,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTweetList: []
+      masterTweetList: [{tweet: "hi"}]
     };
     this.handleAddingNewTweetToList = this.handleAddingNewTweetToList.bind(this);
   }
 
   handleAddingNewTweetToList(newTweet){
+    console.log(newTweet)
     let newMasterTweetList = this.state.masterTweetList.slice();
     newMasterTweetList.push(newTweet);
-    this.setState({masterTweetList: newMasterTweetList});
+    console.log(newMasterTweetList)
+    this.setState({masterTweetList: newMasterTweetList, test: "test"});
+    console.log(this.state)
   }
 
   render () {
@@ -71,6 +74,7 @@ class App extends Component {
           <Profilesummary />
         </div>
         <NewTweetControl onNewTweetCreation={this.handleAddingNewTweetToList} />
+        <TweetList masterTweetList={this.state.masterTweetList}/>
 
         {/*}<Route path='/' render={()=><TweetList tweetList={this.state.masterTweetList} /> } />
       <Route path='/' render={()=><NewTweetControl onNewTweetCreation={this.handleAddingNewTweetToList} />} />*/}

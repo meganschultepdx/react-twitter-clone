@@ -22,13 +22,13 @@ const useStyles = makeStyles(theme => ({
 
 
 function TweetList(props) {
+  console.log(props)
   const classes = useStyles();
-  console.log(props.tweetList);
   return (
     <div className={classes.tweetflow}>
-      {props.tweetList.map((tweet, index) =>
+      {props.masterTweetList && props.masterTweetList.map((tweet, index) =>
         <Tweet
-          text={tweet.text}
+          text={tweet.tweet}
           key={index} />
       )}
     </div>
